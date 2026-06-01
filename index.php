@@ -1,14 +1,14 @@
-<?php
-    session_start();
+<?php// chamou meu fi php no bagui
+    session_start();// abriu sessão
 
-    include("infra/db/connect.php");
+    include("infra/db/connect.php");// conecta com o db(banco de dados)
 
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if($_SERVER['REQUEST_METHOD'] == "POST"){ //se o metodo requirido for post, as linhas de codigo são executadas 
 
-        $usuario = $_POST["usuario"];
-        $senha = $_POST["senha"];
+        $usuario = $_POST["usuario"]; //guarda os dados criados para o usuario
+        $senha = $_POST["senha"]; //guarda os dados da senha do usuario
         
-        $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
+        $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";// cria uma query que seleciona dados do usuario e senha
 
         $resultado = $conn->query($sql);
 
