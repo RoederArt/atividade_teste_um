@@ -1,20 +1,20 @@
 <?php
 session_start();
 if(!isset($_SESSION["usuario"])){
-    header("Location: ../index.php");
+    header("Location: ../index.php");//verifica se o usuario é o mesmo do index
     exit();
 }
 
-include("../infra/db/connect.php");
+include("../infra/db/connect.php");//vincula com o connect
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST"){//verifica se o metodo é post 
     $novoUsuario = $_POST['usuario'];
     $novaSenha = $_POST['senha'];
 
     $sql = "INSERT INTO usuarios (usuario,senha) 
-    VALUES ('$novoUsuario','$novaSenha')";  
+    VALUES ('$novoUsuario','$novaSenha')"; //aqui ele vai criar um usuario novo, mandando assim para o banco de dados e validando o processo
 
-    if($conn->query($sql) === TRUE){
+    if($conn->query($sql) === TRUE){//verifica se o metodo ocorreu com sucesso
         echo "<script> alert('Usuário cadastrado com sucesso!')</script>";
     }else{
         echo "<script> alert('Erro ao cadastrar')</script>";

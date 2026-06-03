@@ -10,14 +10,14 @@
         
         $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";// cria uma query que seleciona dados do usuario e senha
 
-        $resultado = $conn->query($sql);
+        $resultado = $conn->query($sql); //executa a query
 
-        if ($resultado->num_rows > 0){
+        if ($resultado->num_rows > 0){ //aqui ele percorre para verificar se existe usuario
             $_SESSION["usuario"] = $usuario;
-            header("Location: public/home.php");
+            header("Location: public/home.php"); //se existir vai direcionar para a home
             exit();
         }else{
-            $erro = "Usuário ou senha inválidos!";
+            $erro = "Usuário ou senha inválidos!"; //se não da erro
         }
     }
 ?>
@@ -29,7 +29,7 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Sitema de Login Simples</h1>
+    <h1>Sitema de Login Simples</h1> 
 
     <form method="POST">
         <label>Usuário:</label>
@@ -44,7 +44,7 @@
                 echo $erro;
             };
 
-            // esse erro serve ara alguma coisa
+            // verifica se a variavel foi preenchida, se não o codigo da erro
         
         ?>
         <br>

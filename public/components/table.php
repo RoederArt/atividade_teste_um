@@ -15,9 +15,9 @@
 
     $resultadoTodosUsuarios = $conn->query($sqlTodosUsuarios); //executa a query
 
-    while($linha = $resultadoTodosUsuarios->fetch_assoc()){ //
+    while($linha = $resultadoTodosUsuarios->fetch_assoc()){ 
 
-    // o fetch assoc
+    // o fetch assoc percorre a linha e armazena o valor ordenado
 
         echo "  <tr>
                     <td>". $linha['id'] . "</td>
