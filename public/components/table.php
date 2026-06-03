@@ -1,3 +1,4 @@
+<!-- criação visual do layout da tabela -->
 <h4>Usuários Cadastrados</h4>
 
 <table border="1" cellpadding="3">
@@ -10,11 +11,11 @@
 
     <?php
     
-    $sqlTodosUsuarios = "SELECT * FROM usuarios";
+    $sqlTodosUsuarios = "SELECT * FROM usuarios"; //selecionar a tabela de usuarios e cria uma query
 
-    $resultadoTodosUsuarios = $conn->query($sqlTodosUsuarios);
+    $resultadoTodosUsuarios = $conn->query($sqlTodosUsuarios); //executa a query
 
-    while($linha = $resultadoTodosUsuarios->fetch_assoc()){
+    while($linha = $resultadoTodosUsuarios->fetch_assoc()){ //
 
     // o fetch assoc
 
