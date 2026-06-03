@@ -17,7 +17,7 @@
 
     while($linha = $resultadoTodosUsuarios->fetch_assoc()){ 
 
-    // o fetch assoc percorre a linha e armazena o valor ordenado
+    // o fetch assoc percorre a tabela e armazena o valor ordenado
 
         echo "  <tr>
                     <td>". $linha['id'] . "</td>
