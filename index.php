@@ -17,7 +17,7 @@
             header("Location: public/home.php"); //se existir vai direcionar para a home
             exit();
         }else{
-            $erro = "Usuário ou senha inválidos!"; //se não da erro
+            $erro = "Usuário ou senha inválidos!"; //se não informa que ocorreu um erro
         }
     }
 ?>
